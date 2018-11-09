@@ -5,12 +5,10 @@
     "patternProperties": {
         "$.+@.+^": {
             "description": "Node-specific settings - these take highest precedence",
-            "name": "node",
             "type": "object"
         },
         "$[a-zA-Z0-9.]+^": {
             "description": "Zone-specific settings - these are checked if a node-specific setting is not defined",
-            "name": "zone",
             "type": "object"
         }
     },
