@@ -853,7 +853,7 @@ publish_member_connect_satisfied(Q, JObj) ->
 -spec publish_member_connect_satisfied(kz_term:ne_binary(), kz_term:api_terms(), kz_term:ne_binary()) -> 'ok'.
 publish_member_connect_satisfied(Q, API, ContentType) ->
     {'ok', Payload} = kz_api:prepare_api_payload(API, ?MEMBER_CONNECT_SATISFIED_VALUES, fun member_connect_satisfied/1),
-    kz_amqp_util:targeted_publish(Q, Payload, ContentType).
+    amqp_util:targeted_publish(Q, Payload, ContentType).
 
 -spec publish_agent_timeout(kz_term:ne_binary(), kz_term:api_terms()) -> 'ok'.
 publish_agent_timeout(Q, JObj) ->
